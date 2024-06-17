@@ -7,11 +7,15 @@ import LoginScreen from './screens/LoginScreen';
 import RegisterationScreen from './screens/RegisterationScreen';
 
 import ProfileScreen from './screens/ProfileScreen';
+import translations from './assets/Lang/Translation';
+
+import LanguageContext from './Context/LanguageContext';
 
 SplashScreen.preventAutoHideAsync();  // Prevent the splash screen from hiding
 
 export default function App() {
   const [isReady, setIsReady] = useState(false);
+  const [language, setLanguage] = useState('en');
   const fetchFonts = () => {
     return Font.loadAsync({
       'Poppins-Black': require('./assets/fonts/Poppins-Black.ttf'),
@@ -76,9 +80,12 @@ export default function App() {
 
 
   return (
-    <View style={styles.container}>
-      <ProfileScreen />
-    </View>
+    <LanguageContext.Provider value={{ language, setLanguage }}>
+      <View style={styles.container}>
+        <LoginScreen />
+      </View>
+    </LanguageContext.Provider>
+
   );
 
 

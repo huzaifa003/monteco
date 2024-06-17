@@ -1,13 +1,19 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { View, Image, StyleSheet, SafeAreaView, Text, TouchableOpacity, Modal } from 'react-native';
 import { Button, Surface, Provider as PaperProvider } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import SegmentedControl from '../components/SegmentedControl';
 
+import translations from '../assets/Lang/Translation';
+import LanguageContext from '../Context/LanguageContext';
 
 const ProfileScreen = () => {
+    const {language, setLanguage} = useContext(LanguageContext);
     const [modalVisible, setModalVisible] = useState(false);
-
+    useEffect(() => {
+        console.log(translations[language]);
+    }
+    , []);
     return (
         
             <SafeAreaView style={styles.container}>
@@ -26,16 +32,16 @@ const ProfileScreen = () => {
                     </Surface>
                 </View>
 
-                <Text style={styles.textStyle}>Name: Shumail</Text>
-                <Text style={styles.textStyle}>Phone: +436601683385</Text>
-                <Text style={styles.textStyle}>Region: Leinz</Text>
-                <Text style={styles.textStyle}>Language: en</Text>
+                <Text style={styles.textStyle}>Name: {translations[language].name}</Text>
+                <Text style={styles.textStyle}>Phone: {translations[language].phone}</Text>
+                <Text style={styles.textStyle}>Region: {translations[language].region}</Text>
+                <Text style={styles.textStyle}>Language: {language}</Text>
 
                 <Button
                     mode="contained"
                     style={{ marginTop: 20, width: '100%', backgroundColor: '#fc3503', borderRadius: 10, paddingVertical: 5 }}
                     onPress={() => console.log('Pressed')}>
-                    Logout
+                    {translations[language].logout}
                 </Button>
 
                 <Modal style={{height:'20%'}}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { View, Text, StyleSheet, ImageBackground } from 'react-native';
 import InputField from '../components/InputField';
 import SecureInputField from '../components/SecureInputField';
@@ -12,6 +12,8 @@ import { Button } from 'react-native-paper';
 
 import { TextInput, Provider as PaperProvider, DefaultTheme } from 'react-native-paper';
 
+import translations from '../assets/Lang/Translation';
+import LanguageContext from '../Context/LanguageContext';
 // Define a custom theme with primary color changed to black
 const customTheme = {
     ...DefaultTheme,
@@ -28,6 +30,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 
 const RegisterationScreen = () => {
+    const { language, setLanguage } = useContext(LanguageContext);
     const [phoneNumber, setPhoneNumber] = useState('');
     const [password, setPassword] = useState('');
     const [rememberMe, setRememberMe] = useState(false);
@@ -46,7 +49,7 @@ const RegisterationScreen = () => {
             <View style={{ marginTop: 100, alignItems: 'center', justifyContent: 'center' }}>
                 <LogoComponent />
             </View>
-            <Text style={styles.title}>Registeration</Text>
+            <Text style={styles.title}>{translations[language].register}</Text>
 
             {/* <Provider>
                 <DropdownMenu />
@@ -57,7 +60,7 @@ const RegisterationScreen = () => {
             
                 <PaperProvider theme={customTheme}>
                     <TextInput
-                        label="Select Region"
+                        label={translations[language].select_region}
                         // value={searchQuery}
                         // onChangeText={setSearchQuery}
                         style={{ width: '100%', marginBottom: 20 }}
@@ -66,7 +69,7 @@ const RegisterationScreen = () => {
                     />
 
                     <TextInput
-                        label="Enter Password"
+                        label={translations[language].enter_name}
                         value={password}
                         secureTextEntry={true}
                         onChangeText={setPassword}
@@ -77,7 +80,7 @@ const RegisterationScreen = () => {
 
                     <Text></Text>
 
-                    <CountryCode placeholder={"Enter Phone Number"} />
+                    <CountryCode placeholder={translations[language].enter_phone_number} />
 
                     <TextInput
                         label={"Enter Password"}
@@ -93,13 +96,13 @@ const RegisterationScreen = () => {
 
                     <Text />
                     <Text />
-                    <Button mode='contained' style={{ borderRadius: 5, paddingVertical: 5 }}> Register  </Button>
+                    <Button mode='contained' style={{ borderRadius: 5, paddingVertical: 5 }}> {translations[language].register}  </Button>
 
                     
               
 
                     <Text style={styles.footerText}>
-                        Already Have an Account? <Text style={styles.signUpText}>Register</Text>
+                        {translations[language].already_have_an_account} <Text style={styles.signUpText}>{translations[language].register}</Text>
                     </Text>
                 </PaperProvider>
 
