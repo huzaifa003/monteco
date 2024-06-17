@@ -41,9 +41,12 @@ const LoginScreen = () => {
                 iconName="login" // Example icon name
             />
 
+
             <Text style={styles.forgotPassword}>Forgot Password?</Text>
 
-            <SegmentedControl options={['English', 'German', 'Italian']} />
+            <View style={{ width: '80%', alignItems: 'center', justifyContent: 'center'}}>
+                <SegmentedControl options={['English', 'German', 'Italian']} />
+            </View>
             <Text style={styles.footerText}>
                 Don't have an account? <Text style={styles.signUpText}>Register</Text>
             </Text>
@@ -70,9 +73,9 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFA500',
         paddingVertical: 15,
         borderRadius: 30,
- 
+
         marginTop: 30,
-        left:0,
+        left: 0,
     },
     buttonText: {
         color: 'white',
@@ -80,7 +83,7 @@ const styles = StyleSheet.create({
     },
     forgotPassword: {
         textAlign: 'right',
-        
+
         marginTop: 20,
         fontSize: 16,
         fontWeight: '500',
