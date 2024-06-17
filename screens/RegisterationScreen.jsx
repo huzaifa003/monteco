@@ -93,7 +93,7 @@ const RegisterationScreen = () => {
                 <CountryCode placeholder={translations[language].enter_phone_number} />
 
                 <TextInput
-                    label={"Enter Password"}
+                    label={translations[language].enter_password}
                     secureTextEntry={true}
                     right={<TextInput.Icon icon="eye" />}
                     mode='outlined'
