@@ -50,7 +50,7 @@ const LoginScreen = () => {
             {/* ----------------- Remember Me --------------- */}
             <View style={{ marginLeft: 15 }}>
                 <CheckBox
-                    label="Remember Me"
+                    label={translations[language].remember_me}
                     value={rememberMe}
                     onValueChange={() => { setRememberMe(!rememberMe) }}
                 />
