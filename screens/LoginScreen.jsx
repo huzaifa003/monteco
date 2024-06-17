@@ -11,9 +11,10 @@ import LogoComponent from '../components/LogoComponent';
 
 import translations from '../assets/Lang/Translation';
 import LanguageContext from '../Context/LanguageContext';
+import { useNavigation } from '@react-navigation/native';
 
 const LoginScreen = () => {
-
+    const navigation = useNavigation();
     const { language, setLanguage } = useContext(LanguageContext);
     const [phoneNumber, setPhoneNumber] = useState('');
     const [password, setPassword] = useState('');
@@ -51,7 +52,7 @@ const LoginScreen = () => {
             <Text />
             <CustomButton
                 title={translations[language].login}
-                onPress={() => console.log('Pressed')}
+                onPress={() => navigation.navigate("Home")}
                 color="#FFA500"
                 iconName="login"
             />
@@ -61,7 +62,7 @@ const LoginScreen = () => {
             </View>
 
             <Text style={styles.footerText}>
-                {translations[language].dont_have_an_account} <Text style={styles.signUpText}>{translations[language].register}</Text>
+                {translations[language].dont_have_an_account} <Text onPress={()=>{navigation.navigate("Register")}} style={styles.signUpText}>{translations[language].register}</Text>
             </Text>
         </View>
     );

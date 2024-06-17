@@ -14,6 +14,8 @@ import { TextInput, Provider as PaperProvider, DefaultTheme } from 'react-native
 
 import translations from '../assets/Lang/Translation';
 import LanguageContext from '../Context/LanguageContext';
+
+import { useNavigation } from '@react-navigation/native';
 // Define a custom theme with primary color changed to black
 const customTheme = {
     ...DefaultTheme,
@@ -29,7 +31,9 @@ const customTheme = {
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 
+
 const RegisterationScreen = () => {
+    const navigation = useNavigation();
     const { language, setLanguage } = useContext(LanguageContext);
     const [phoneNumber, setPhoneNumber] = useState('');
     const [password, setPassword] = useState('');
@@ -96,13 +100,13 @@ const RegisterationScreen = () => {
 
                 <Text />
                 <Text />
-                <Button mode='contained' style={{ borderRadius: 5, paddingVertical: 5 }}> {translations[language].register}  </Button>
+                <Button onPress={()=>{navigation.navigate("Login")}}  mode='contained' style={{ borderRadius: 5, paddingVertical: 5 }}> {translations[language].register}  </Button>
 
 
 
 
                 <Text style={styles.footerText}>
-                    {translations[language].already_have_an_account} <Text style={styles.signUpText}>{translations[language].register}</Text>
+                    {translations[language].already_have_an_account} <Text onPress={()=> navigation.navigate("Login")} style={styles.signUpText}>{translations[language].login}</Text>
                 </Text>
             </PaperProvider>
 

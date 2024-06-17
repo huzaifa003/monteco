@@ -7,8 +7,9 @@ import SegmentedControl from '../components/SegmentedControl';
 import translations from '../assets/Lang/Translation';
 import LanguageContext from '../Context/LanguageContext';
 import TopRightIcon from '../components/TopRightIcon';
-
+import { useNavigation } from '@react-navigation/native';
 const ProfileScreen = () => {
+    const navigation = useNavigation();
     const { language, setLanguage } = useContext(LanguageContext);
     const [modalVisible, setModalVisible] = useState(false);
     useEffect(() => {
@@ -35,7 +36,7 @@ const ProfileScreen = () => {
             <Button
                 mode="contained"
                 style={{ marginTop: 20, width: '100%', backgroundColor: '#fc3503', borderRadius: 10, paddingVertical: 5 }}
-                onPress={() => console.log('Pressed')}>
+                onPress={() => navigation.navigate("Login")}>
                 {translations[language].logout}
             </Button>
 

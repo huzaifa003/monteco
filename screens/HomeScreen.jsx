@@ -7,8 +7,10 @@ import SegmentedControl from '../components/SegmentedControl';
 import translations from '../assets/Lang/Translation';
 import LanguageContext from '../Context/LanguageContext';
 import TopRightIcon from '../components/TopRightIcon';
+import { useNavigation } from '@react-navigation/native';
 
 const HomeScreen = () => {
+    const navigation = useNavigation();
     const { language, setLanguage } = useContext(LanguageContext);
     const [modalVisible, setModalVisible] = useState(false);
     useEffect(() => {
@@ -35,7 +37,7 @@ const HomeScreen = () => {
             {/*--------------- The top header where icon is shown-------------- */}
 
 
-            <TopRightIcon icon='cog-outline' onClick={() => setModalVisible(true)} size={36} color='black' />
+            <TopRightIcon icon='cog-outline' onClick={() => navigation.navigate("Profile")} size={36} color='black' />
 
             {/*--------------- The Image section of logo with text-------------- */}
             
