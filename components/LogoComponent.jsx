@@ -14,8 +14,9 @@ const styles = StyleSheet.create({
         // Add container styling if necessary
     },
     logoText: {
-        fontSize: 24,  // Adjust size as needed
-        fontFamily: 'Poppins-Black',  // Change to your actual font name
+        fontSize: 50,  // Adjust size as needed
+        fontWeight:'700',
+        fontFamily: 'Rubik-Light',  // Change to your actual font name
         color: '#FFA500',  // Adjust the color to match the image
         // textShadowColor: 'rgba(0, 0, 0, 0.75)',
         textShadowOffset: { width: 0, height: 1 },

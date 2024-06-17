@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, ImageBackground } from 'react-native';
 import InputField from '../components/InputField';
 import SecureInputField from '../components/SecureInputField';
 import CheckBox from '../components/CheckBox';
@@ -8,50 +8,52 @@ import CustomButton from '../components/CustomButton';
 import SegmentedControl from '../components/SegmentedControl';
 import LogoComponent from '../components/LogoComponent';
 
-
-
 const LoginScreen = () => {
-
     const [phoneNumber, setPhoneNumber] = useState('');
     const [password, setPassword] = useState('');
     const [rememberMe, setRememberMe] = useState(false);
 
     return (
         <View style={styles.container}>
-            <View style={{ marginTop: 25,  alignItems: 'center', justifyContent: 'center' }}>
+            <View style={styles.backgroundContainer}>
+                <ImageBackground
+                    source={require('../assets/Icons/CircleBackground.png')}
+                    style={styles.imageBackground}
+                    resizeMode='stretch'  // This prop ensures that the background image covers the entire space
+                >
+                    {/* Empty component to maintain layout */}
+                </ImageBackground>
+            </View>
+            <View style={{ marginTop: 100, alignItems: 'center', justifyContent: 'center' }}>
                 <LogoComponent />
-                
             </View>
             <Text style={styles.title}>Login to your account</Text>
-
             <CountryCode />
-
-
             <SecureInputField
                 value={password}
                 onChangeText={setPassword}
                 placeholder="Password"
             />
-
-            <CheckBox
-                label="Remember Me"
-                value={rememberMe}
-                onValueChange={() => { setRememberMe(!rememberMe) }}
-            />
-
+            <View style={{ marginLeft: 15 }}>
+                <CheckBox
+                    label="Remember Me"
+                    value={rememberMe}
+                    onValueChange={() => { setRememberMe(!rememberMe) }}
+                />
+            </View>
+            <Text />
+            <Text />
             <CustomButton
                 title="Login"
                 onPress={() => console.log('Pressed')}
-                color="#FFA500" // Example color
-                iconName="login" // Example icon name
+                color="#FFA500"
+                iconName="login"
             />
-
-
             <Text style={styles.forgotPassword}>Forgot Password?</Text>
-
-            <View style={{ width: '80%', alignItems: 'center', justifyContent: 'center' }}>
+            <View style={{ width: '100%', marginTop: '20%', alignItems: 'center', justifyContent: 'center' }}>
                 <SegmentedControl options={['English', 'German', 'Italian']} />
             </View>
+
             <Text style={styles.footerText}>
                 Don't have an account? <Text style={styles.signUpText}>Register</Text>
             </Text>
@@ -66,12 +68,29 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         width: '100%',
     },
+    backgroundContainer: {
+        position: 'absolute',
+
+        
+        width: '50%',
+        height: '50%',
+        
+        marginLeft: 267,
+        marginBottom: 400,
+        
+    },
+    imageBackground: {
+        width: '100%',
+        height: '100%',
+
+    },
     title: {
         fontSize: 22,
+        fontFamily: 'Poppins-Black',
         fontWeight: 'bold',
         color: '#000',
         textAlign: 'center',
-        marginTop: 60,
+        marginTop: 20,
         marginBottom: 20,
     },
     button: {
@@ -89,13 +108,13 @@ const styles = StyleSheet.create({
     forgotPassword: {
         textAlign: 'right',
 
-        marginTop: 20,
+        marginTop: 10,
         fontSize: 16,
         fontWeight: '500',
     },
     footerText: {
         textAlign: 'center',
-        marginTop: 20,
+        marginTop: '20%',
         fontSize: 16,
     },
     signUpText: {

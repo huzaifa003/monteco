@@ -11,11 +11,11 @@ const SegmentedControl = ({ options }) => {
                     <TouchableOpacity
                         style={[
                             styles.option,
-                            { backgroundColor: selectedOption === option ? '#6a5acd' : '#d3d3d3' }
+                            { backgroundColor: selectedOption === option ? '#6a5acd' : '#A9A9A9' }
                         ]}
                         onPress={() => setSelectedOption(option)}
                     >
-                        <Text style={styles.text}>{option}</Text>
+                        <Text style={[styles.text, {color: selectedOption === option ? 'white' : 'black'}]}>{option}</Text>
                     </TouchableOpacity>
                     {index < options.length - 1 && (
                         <View style={styles.separator} />
@@ -29,19 +29,23 @@ const SegmentedControl = ({ options }) => {
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        borderRadius: 20,
+        borderRadius: 10,
         backgroundColor: '#d3d3d3',  // Background color for the whole control
         overflow: 'hidden',
+        justifyContent: 'center',
+        alignItems: 'center',
+
     },
     option: {
-        flex: 1,
-        padding: 10,
+        
+        paddingHorizontal: 15,
+        paddingVertical: 10,
         alignItems: 'center',
         justifyContent: 'center',
     },
     text: {
         color: 'white',
-        fontSize: 16,
+        fontSize: 14,
     },
     separator: {
         width: 1,

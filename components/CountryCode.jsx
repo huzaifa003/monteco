@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#fff',
         
-        paddingHorizontal: 10,
+        paddingHorizontal: 20,
         paddingVertical: 5,
         shadowColor: 'grey',
         borderRadius: 10,
@@ -40,8 +40,8 @@ const styles = StyleSheet.create({
     input: {
         flex: 1,
         fontSize: 16,
-        paddingHorizontal: 5,
-        paddingVertical: 5,
+        paddingHorizontal: 15,
+        paddingVertical: 7,
         color: '#333',
     },
     icon: {
