@@ -18,7 +18,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.bunty003.monteco"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -26,6 +27,7 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    
     "fonts": [
       {
         "family": "Poppins-Black",
@@ -164,8 +166,14 @@
         "file": "./assets/fonts/SutonnyMJ Regular.ttf"
       }
     ],
-    "plugins": [
-      "expo-router"
-    ]
+ 
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "b8d4e139-0be0-4598-badb-bd3f658cded4"
+      }
+    }
   }
 }

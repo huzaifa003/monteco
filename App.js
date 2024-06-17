@@ -1,16 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, StyleSheet, ActivityIndicator } from 'react-native';
-import AppLoading from 'expo-app-loading';
+import { StyleSheet, ActivityIndicator } from 'react-native';
+
 import * as Font from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
-import LoginScreen from './screens/LoginScreen';
-import RegisterationScreen from './screens/RegisterationScreen';
 
-import ProfileScreen from './screens/ProfileScreen';
-import translations from './assets/Lang/Translation';
 
 import LanguageContext from './Context/LanguageContext';
-import HomeScreen from './screens/HomeScreen';
 import Layout from './layout/Layout';
 
 SplashScreen.preventAutoHideAsync();  // Prevent the splash screen from hiding
