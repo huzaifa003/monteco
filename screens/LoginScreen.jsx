@@ -4,11 +4,13 @@ import InputField from '../components/InputField';
 import SecureInputField from '../components/SecureInputField';
 import CheckBox from '../components/CheckBox';
 import CountryCode from '../components/CountryCode';
+import CustomButton from '../components/CustomButton';
+import SegmentedControl from '../components/SegmentedControl';
 
 
 
 const LoginScreen = () => {
-    
+
     const [phoneNumber, setPhoneNumber] = useState('');
     const [password, setPassword] = useState('');
     const [rememberMe, setRememberMe] = useState(false);
@@ -19,7 +21,7 @@ const LoginScreen = () => {
 
             <CountryCode />
 
-            
+
             <SecureInputField
                 value={password}
                 onChangeText={setPassword}
@@ -29,15 +31,19 @@ const LoginScreen = () => {
             <CheckBox
                 label="Remember Me"
                 value={rememberMe}
-                onValueChange={()=>{setRememberMe(!rememberMe)}}
+                onValueChange={() => { setRememberMe(!rememberMe) }}
             />
 
-            <TouchableOpacity style={styles.button}>
-                <Text style={styles.buttonText}>Login</Text>
-            </TouchableOpacity>
+            <CustomButton
+                title="Login"
+                onPress={() => console.log('Pressed')}
+                color="#FFA500" // Example color
+                iconName="login" // Example icon name
+            />
 
-            <Text style={styles.forgotPassword}>Forgot Password ?</Text>
+            <Text style={styles.forgotPassword}>Forgot Password?</Text>
 
+            <SegmentedControl options={['English', 'German', 'Italian']} />
             <Text style={styles.footerText}>
                 Don't have an account? <Text style={styles.signUpText}>Register</Text>
             </Text>
@@ -64,18 +70,20 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFA500',
         paddingVertical: 15,
         borderRadius: 30,
-        alignItems: 'center',
+ 
         marginTop: 30,
+        left:0,
     },
     buttonText: {
         color: 'white',
         fontSize: 18,
     },
     forgotPassword: {
-        textAlign: 'center',
-        color: '#FFA500',
+        textAlign: 'right',
+        
         marginTop: 20,
         fontSize: 16,
+        fontWeight: '500',
     },
     footerText: {
         textAlign: 'center',
