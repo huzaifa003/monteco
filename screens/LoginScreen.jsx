@@ -6,6 +6,7 @@ import CheckBox from '../components/CheckBox';
 import CountryCode from '../components/CountryCode';
 import CustomButton from '../components/CustomButton';
 import SegmentedControl from '../components/SegmentedControl';
+import LogoComponent from '../components/LogoComponent';
 
 
 
@@ -17,6 +18,10 @@ const LoginScreen = () => {
 
     return (
         <View style={styles.container}>
+            <View style={{ marginTop: 25,  alignItems: 'center', justifyContent: 'center' }}>
+                <LogoComponent />
+                
+            </View>
             <Text style={styles.title}>Login to your account</Text>
 
             <CountryCode />
@@ -44,7 +49,7 @@ const LoginScreen = () => {
 
             <Text style={styles.forgotPassword}>Forgot Password?</Text>
 
-            <View style={{ width: '80%', alignItems: 'center', justifyContent: 'center'}}>
+            <View style={{ width: '80%', alignItems: 'center', justifyContent: 'center' }}>
                 <SegmentedControl options={['English', 'German', 'Italian']} />
             </View>
             <Text style={styles.footerText}>
