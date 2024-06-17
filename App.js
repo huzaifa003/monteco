@@ -6,6 +6,8 @@ import * as SplashScreen from 'expo-splash-screen';
 import LoginScreen from './screens/LoginScreen';
 import RegisterationScreen from './screens/RegisterationScreen';
 
+import ProfileScreen from './screens/ProfileScreen';
+
 SplashScreen.preventAutoHideAsync();  // Prevent the splash screen from hiding
 
 export default function App() {
@@ -75,7 +77,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <RegisterationScreen />
+      <ProfileScreen />
     </View>
   );
 
