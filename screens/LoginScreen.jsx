@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { View, Text, StyleSheet, ImageBackground } from 'react-native';
 import InputField from '../components/InputField';
 import SecureInputField from '../components/SecureInputField';
@@ -8,7 +8,13 @@ import CustomButton from '../components/CustomButton';
 import SegmentedControl from '../components/SegmentedControl';
 import LogoComponent from '../components/LogoComponent';
 
+
+import translations from '../assets/Lang/Translation';
+import LanguageContext from '../Context/LanguageContext';
+
 const LoginScreen = () => {
+    
+    const { language, setLanguage } = useContext(LanguageContext);
     const [phoneNumber, setPhoneNumber] = useState('');
     const [password, setPassword] = useState('');
     const [rememberMe, setRememberMe] = useState(false);
@@ -27,12 +33,12 @@ const LoginScreen = () => {
             <View style={{ marginTop: 100, alignItems: 'center', justifyContent: 'center' }}>
                 <LogoComponent />
             </View>
-            <Text style={styles.title}>Login to your account</Text>
-            <CountryCode />
+            <Text style={styles.title}>{translations[language].login_to_your_account}</Text>
+            <CountryCode placeholder={translations[language].enter_phone_number} />
             <SecureInputField
                 value={password}
                 onChangeText={setPassword}
-                placeholder="Password"
+                placeholder={translations[language].password}
             />
             <View style={{ marginLeft: 15 }}>
                 <CheckBox
@@ -44,18 +50,18 @@ const LoginScreen = () => {
             <Text />
             <Text />
             <CustomButton
-                title="Login"
+                title={translations[language].login}
                 onPress={() => console.log('Pressed')}
                 color="#FFA500"
                 iconName="login"
             />
-            <Text style={styles.forgotPassword}>Forgot Password?</Text>
+            <Text style={styles.forgotPassword}>{translations[language].forgot_password}</Text>
             <View style={{ width: '100%', marginTop: '20%', alignItems: 'center', justifyContent: 'center' }}>
                 <SegmentedControl options={['English', 'German', 'Italian']} />
             </View>
 
             <Text style={styles.footerText}>
-                Don't have an account? <Text style={styles.signUpText}>Register</Text>
+                {translations[language].dont_have_an_account} <Text style={styles.signUpText}>{translations[language].register}</Text>
             </Text>
         </View>
     );

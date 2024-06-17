@@ -82,7 +82,7 @@ export default function App() {
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>
       <View style={styles.container}>
-        <RegisterationScreen />
+        <LoginScreen />
       </View>
     </LanguageContext.Provider>
 

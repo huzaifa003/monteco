@@ -80,7 +80,7 @@ const RegisterationScreen = () => {
 
                     <Text></Text>
 
-                    <CountryCode placeholder={translations[language].enter_phone_no} />
+                    <CountryCode placeholder={translations[language].enter_phone_number} />
 
                     <TextInput
                         label={"Enter Password"}
