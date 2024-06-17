@@ -23,7 +23,7 @@ const ProfileScreen = () => {
                 mode="contained"
                 style={{ marginTop: 20, width: '100%', backgroundColor: '#fc3503', borderRadius: 10, paddingVertical: 5}}
                 onPress={() => console.log('Pressed')}>
-                Edit Profile
+                Logout
             </Button>
             
 
