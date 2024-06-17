@@ -18,6 +18,8 @@ const HomeScreen = () => {
 
         <SafeAreaView style={styles.container}>
 
+
+            {/*--------------- The background image of the screen-------------- */}
             <View style={styles.backgroundContainer}>
                 <ImageBackground
                     source={require('../assets/Icons/CircleBackground.png')}
@@ -28,13 +30,20 @@ const HomeScreen = () => {
                 </ImageBackground>
             </View>
 
+
+            {/*--------------- The top header where icon is shown-------------- */}
+
+
             <View style={styles.header}>
                 <View style={{ flex: 1, alignItems: 'flex-end', paddingTop: 30 }}>
                     <TouchableOpacity onPress={() => setModalVisible(true)}>
-                        <MaterialCommunityIcons name="pencil" size={24} color="black" />
+                        <MaterialCommunityIcons name="cog-outline" size={36} color="black" />
                     </TouchableOpacity>
                 </View>
             </View>
+
+            {/*--------------- The Image section of logo with text-------------- */}
+            
             <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                 <Image source={require('../assets/Icons/logo.png')} style={{ width: '25%', height: '25%', marginTop: 5 }} />
                 <View style={{ padding: 0, marginTop: 0, alignContent: 'center', alignItems: 'center', marginTop: 20 }}>
@@ -45,6 +54,9 @@ const HomeScreen = () => {
                     <Text style={[styles.textStyle, { fontFamily: 'Poppins-Bold', fontSize: 14, marginTop: 10 }]}> {translations[language].your_personal_tick_tracker} Monzec</Text>
                 </View>
             </View>
+
+
+            {/*--------------- The button section of history and add tick-------------- */}
 
             <View style={{
                 top: 0, backgroundColor: 'white', width: '100%', borderRadius: 20, flex: 1, justifyContent: 'flex-end'
@@ -85,6 +97,8 @@ const HomeScreen = () => {
                 </Button>
             </View>
 
+            
+            {/* ------------------------  The Modal That opens upon clicking settings icon -------------------  */}
 
 
             <Modal style={{ height: '20%' }}
