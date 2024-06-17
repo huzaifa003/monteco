@@ -163,6 +163,9 @@
         "family": "SutonnyMJ Regular",
         "file": "./assets/fonts/SutonnyMJ Regular.ttf"
       }
+    ],
+    "plugins": [
+      "expo-router"
     ]
   }
 }
