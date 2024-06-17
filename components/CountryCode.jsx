@@ -6,7 +6,7 @@ const CountryCode = ({ value, onChangeText, placeholder }) => {
     return (
         <View style={styles.container}>
             <Image source={require('../assets/Icons/austriaFlag.png')} style={styles.icon} />
-            <Text style={{fontWeight: 800}}> +92 </Text>
+            <Text style={{ fontWeight: 800 }}> +92 </Text>
             <TextInput
                 style={styles.input}
                 value={value}
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         backgroundColor: '#fff',
-        
+
         paddingHorizontal: 20,
         paddingVertical: 5,
         shadowColor: 'grey',
@@ -32,10 +32,10 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.5,
         shadowRadius: 3,
         elevation: 20,
-        
+
         shadowOffset: { width: 0, height: 25 },
         marginBottom: 20,
-        
+
     },
     input: {
         flex: 1,
@@ -46,8 +46,8 @@ const styles = StyleSheet.create({
     },
     icon: {
         marginRight: 10,
-        height : 30,
-        width : 30,
+        height: 30,
+        width: 30,
     },
 });
 

@@ -6,7 +6,7 @@ const SegmentedControl = ({ options }) => {
     const { language, setLanguage } = useContext(LanguageContext);
 
     useEffect(() => {
-        
+
         if (selectedOption === 'English') {
             setLanguage('en');
         } else if (selectedOption === 'German') {
@@ -16,9 +16,9 @@ const SegmentedControl = ({ options }) => {
             setLanguage('it');
         }
         console.log(language);
-        
+
     }
-    , [selectedOption]);
+        , [selectedOption]);
     return (
         <View style={styles.container}>
             {options.map((option, index) => (
@@ -30,7 +30,7 @@ const SegmentedControl = ({ options }) => {
                         ]}
                         onPress={() => setSelectedOption(option)}
                     >
-                        <Text style={[styles.text, {color: selectedOption === option ? 'white' : 'black'}]}>{option}</Text>
+                        <Text style={[styles.text, { color: selectedOption === option ? 'white' : 'black' }]}>{option}</Text>
                     </TouchableOpacity>
                     {index < options.length - 1 && (
                         <View style={styles.separator} />
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
 
     },
     option: {
-        
+
         paddingHorizontal: 15,
         paddingVertical: 10,
         alignItems: 'center',

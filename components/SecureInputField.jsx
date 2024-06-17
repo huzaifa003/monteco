@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         backgroundColor: '#fff',
-        
+
         paddingHorizontal: 23,
         paddingVertical: 5,
         shadowColor: 'grey',
@@ -31,10 +31,10 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.5,
         shadowRadius: 3,
         elevation: 20,
-        
+
         shadowOffset: { width: 0, height: 25 },
         marginBottom: 20,
-        
+
     },
     input: {
         flex: 1,
