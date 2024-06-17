@@ -6,6 +6,7 @@ import SegmentedControl from '../components/SegmentedControl';
 
 import translations from '../assets/Lang/Translation';
 import LanguageContext from '../Context/LanguageContext';
+import TopRightIcon from '../components/TopRightIcon';
 
 const HomeScreen = () => {
     const { language, setLanguage } = useContext(LanguageContext);
@@ -34,13 +35,7 @@ const HomeScreen = () => {
             {/*--------------- The top header where icon is shown-------------- */}
 
 
-            <View style={styles.header}>
-                <View style={{ flex: 1, alignItems: 'flex-end', paddingTop: 30 }}>
-                    <TouchableOpacity onPress={() => setModalVisible(true)}>
-                        <MaterialCommunityIcons name="cog-outline" size={36} color="black" />
-                    </TouchableOpacity>
-                </View>
-            </View>
+            <TopRightIcon icon='cog-outline' onClick={() => setModalVisible(true)} size={36} color='black' />
 
             {/*--------------- The Image section of logo with text-------------- */}
             

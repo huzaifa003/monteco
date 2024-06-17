@@ -83,7 +83,7 @@ export default function App() {
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>
       <View style={styles.container}>
-        <HomeScreen />
+        <ProfileScreen />
       </View>
     </LanguageContext.Provider>
 

@@ -6,6 +6,7 @@ import SegmentedControl from '../components/SegmentedControl';
 
 import translations from '../assets/Lang/Translation';
 import LanguageContext from '../Context/LanguageContext';
+import TopRightIcon from '../components/TopRightIcon';
 
 const ProfileScreen = () => {
     const { language, setLanguage } = useContext(LanguageContext);
@@ -18,13 +19,7 @@ const ProfileScreen = () => {
 
         <SafeAreaView style={styles.container}>
 
-            <View style={styles.header}>
-                <View style={{ flex: 1, alignItems: 'flex-end', paddingTop: 30 }}>
-                    <TouchableOpacity onPress={() => setModalVisible(true)}>
-                        <MaterialCommunityIcons name="pencil" size={24} color="black" />
-                    </TouchableOpacity>
-                </View>
-            </View>
+            <TopRightIcon icon='pencil' onClick={() => setModalVisible(true)} size={26} color='black' />
 
             <View style={{ paddingHorizontal: 10, flex: 0.4, marginTop: 40 }}>
                 <Surface style={styles.surface}>
