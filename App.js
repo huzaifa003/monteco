@@ -4,6 +4,7 @@ import AppLoading from 'expo-app-loading';
 import * as Font from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import LoginScreen from './screens/LoginScreen';
+import RegisterationScreen from './screens/RegisterationScreen';
 
 SplashScreen.preventAutoHideAsync();  // Prevent the splash screen from hiding
 
@@ -48,7 +49,7 @@ export default function App() {
     });
   };
 
-  
+
   useEffect(() => {
     async function prepare() {
       try {
@@ -60,7 +61,7 @@ export default function App() {
         // When font loading is complete, hide the splash screen
         await SplashScreen.hideAsync();
         setIsReady(true);
-       
+
       }
     }
 
@@ -71,14 +72,14 @@ export default function App() {
     return <ActivityIndicator />;
   }
 
-  
+
   return (
     <View style={styles.container}>
-      <LoginScreen />
+      <RegisterationScreen />
     </View>
   );
-  
- 
+
+
 }
 
 const styles = StyleSheet.create({
