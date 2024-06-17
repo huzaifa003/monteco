@@ -8,59 +8,59 @@ import translations from '../assets/Lang/Translation';
 import LanguageContext from '../Context/LanguageContext';
 
 const ProfileScreen = () => {
-    const {language, setLanguage} = useContext(LanguageContext);
+    const { language, setLanguage } = useContext(LanguageContext);
     const [modalVisible, setModalVisible] = useState(false);
     useEffect(() => {
         console.log(translations[language]);
     }
-    , []);
+        , []);
     return (
-        
-            <SafeAreaView style={styles.container}>
-                
-                <View style={styles.header}>
-                    <View style={{ flex: 1, alignItems: 'flex-end', paddingTop: 30 }}>
-                        <TouchableOpacity onPress={() => setModalVisible(true)}>
-                            <MaterialCommunityIcons name="pencil" size={24} color="black" />
-                        </TouchableOpacity>
-                    </View>
+
+        <SafeAreaView style={styles.container}>
+
+            <View style={styles.header}>
+                <View style={{ flex: 1, alignItems: 'flex-end', paddingTop: 30 }}>
+                    <TouchableOpacity onPress={() => setModalVisible(true)}>
+                        <MaterialCommunityIcons name="pencil" size={24} color="black" />
+                    </TouchableOpacity>
                 </View>
+            </View>
 
-                <View style={{ paddingHorizontal: 10, flex: 0.4, marginTop: 40 }}>
-                    <Surface style={styles.surface}>
-                        <Image source={require('../assets/Icons/logo.png')} style={{ width: '100%', height: '100%', borderRadius: 40 }} />
-                    </Surface>
+            <View style={{ paddingHorizontal: 10, flex: 0.4, marginTop: 40 }}>
+                <Surface style={styles.surface}>
+                    <Image source={require('../assets/Icons/logo.png')} style={{ width: '100%', height: '100%', borderRadius: 40 }} />
+                </Surface>
+            </View>
+
+            <Text style={styles.textStyle}>Name: {translations[language].name}</Text>
+            <Text style={styles.textStyle}>Phone: {translations[language].phone}</Text>
+            <Text style={styles.textStyle}>Region: {translations[language].region}</Text>
+            <Text style={styles.textStyle}>Language: {language}</Text>
+
+            <Button
+                mode="contained"
+                style={{ marginTop: 20, width: '100%', backgroundColor: '#fc3503', borderRadius: 10, paddingVertical: 5 }}
+                onPress={() => console.log('Pressed')}>
+                {translations[language].logout}
+            </Button>
+
+            <Modal style={{ height: '20%' }}
+                animationType='fade'
+                transparent={true}
+
+                visible={modalVisible}
+                onRequestClose={() => {
+                    setModalVisible(!modalVisible);
+                }}
+            >
+                <View style={styles.modalView}>
+                    <SegmentedControl options={['English', 'German', 'Italian']} />
+                    <Text></Text>
+                    <Button onPress={() => setModalVisible(!modalVisible)}>Close</Button>
                 </View>
+            </Modal>
+        </SafeAreaView>
 
-                <Text style={styles.textStyle}>Name: {translations[language].name}</Text>
-                <Text style={styles.textStyle}>Phone: {translations[language].phone}</Text>
-                <Text style={styles.textStyle}>Region: {translations[language].region}</Text>
-                <Text style={styles.textStyle}>Language: {language}</Text>
-
-                <Button
-                    mode="contained"
-                    style={{ marginTop: 20, width: '100%', backgroundColor: '#fc3503', borderRadius: 10, paddingVertical: 5 }}
-                    onPress={() => console.log('Pressed')}>
-                    {translations[language].logout}
-                </Button>
-
-                <Modal style={{height:'20%'}}
-                    animationType='fade'
-                    transparent={true}
-                    
-                    visible={modalVisible}
-                    onRequestClose={() => {
-                        setModalVisible(!modalVisible);
-                    }}
-                >
-                    <View style={styles.modalView}>
-                        <SegmentedControl options={['English', 'German', 'Italian']} />
-                        <Text></Text>
-                        <Button onPress={() => setModalVisible(!modalVisible)}>Close</Button>
-                    </View>
-                </Modal>
-            </SafeAreaView>
-        
     );
 }
 

@@ -19,7 +19,7 @@ const customTheme = {
     ...DefaultTheme,
     colors: {
         ...DefaultTheme.colors,
-        
+
         text: 'black', // Text color
         placeholder: 'gray', // Placeholder color
         background: 'white', // Background color
@@ -57,54 +57,54 @@ const RegisterationScreen = () => {
 
 
 
-            
-                <PaperProvider theme={customTheme}>
-                    <TextInput
-                        label={translations[language].select_region}
-                        // value={searchQuery}
-                        // onChangeText={setSearchQuery}
-                        style={{ width: '100%', marginBottom: 20 }}
-                        mode="outlined"
-                        right={<TextInput.Icon icon="arrow-down-thin" />}
-                    />
 
-                    <TextInput
-                        label={translations[language].enter_name}
-                        value={password}
-                        secureTextEntry={true}
-                        onChangeText={setPassword}
-                        right={<TextInput.Icon name="eye" />}
-                        mode="outlined"
-                        style={{ backgroundColor: 'white', width: '100%' }}
-                    />
+            <PaperProvider theme={customTheme}>
+                <TextInput
+                    label={translations[language].select_region}
+                    // value={searchQuery}
+                    // onChangeText={setSearchQuery}
+                    style={{ width: '100%', marginBottom: 20 }}
+                    mode="outlined"
+                    right={<TextInput.Icon icon="arrow-down-thin" />}
+                />
 
-                    <Text></Text>
+                <TextInput
+                    label={translations[language].enter_name}
+                    value={password}
+                    secureTextEntry={true}
+                    onChangeText={setPassword}
+                    right={<TextInput.Icon name="eye" />}
+                    mode="outlined"
+                    style={{ backgroundColor: 'white', width: '100%' }}
+                />
 
-                    <CountryCode placeholder={translations[language].enter_phone_number} />
+                <Text></Text>
 
-                    <TextInput
-                        label={"Enter Password"}
-                        secureTextEntry={true}
-                        right={<TextInput.Icon icon="eye" />}
-                        mode='outlined'
-                        style={{ backgroundColor: 'white', borderColor: "white" }}
-                        focusable= {false}
-                    />
+                <CountryCode placeholder={translations[language].enter_phone_number} />
 
-
+                <TextInput
+                    label={"Enter Password"}
+                    secureTextEntry={true}
+                    right={<TextInput.Icon icon="eye" />}
+                    mode='outlined'
+                    style={{ backgroundColor: 'white', borderColor: "white" }}
+                    focusable={false}
+                />
 
 
-                    <Text />
-                    <Text />
-                    <Button mode='contained' style={{ borderRadius: 5, paddingVertical: 5 }}> {translations[language].register}  </Button>
 
-                    
-              
 
-                    <Text style={styles.footerText}>
-                        {translations[language].already_have_an_account} <Text style={styles.signUpText}>{translations[language].register}</Text>
-                    </Text>
-                </PaperProvider>
+                <Text />
+                <Text />
+                <Button mode='contained' style={{ borderRadius: 5, paddingVertical: 5 }}> {translations[language].register}  </Button>
+
+
+
+
+                <Text style={styles.footerText}>
+                    {translations[language].already_have_an_account} <Text style={styles.signUpText}>{translations[language].register}</Text>
+                </Text>
+            </PaperProvider>
 
 
 

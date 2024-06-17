@@ -13,7 +13,7 @@ import translations from '../assets/Lang/Translation';
 import LanguageContext from '../Context/LanguageContext';
 
 const LoginScreen = () => {
-    
+
     const { language, setLanguage } = useContext(LanguageContext);
     const [phoneNumber, setPhoneNumber] = useState('');
     const [password, setPassword] = useState('');
@@ -76,19 +76,15 @@ const styles = StyleSheet.create({
     },
     backgroundContainer: {
         position: 'absolute',
-
-        
         width: '50%',
         height: '50%',
-        
         marginLeft: 267,
         marginBottom: 400,
-        
+
     },
     imageBackground: {
         width: '100%',
         height: '100%',
-
     },
     title: {
         fontSize: 22,
