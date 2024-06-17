@@ -1,9 +1,24 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-
+import LanguageContext from '../Context/LanguageContext';
 const SegmentedControl = ({ options }) => {
     const [selectedOption, setSelectedOption] = useState(options[0]);
+    const { language, setLanguage } = useContext(LanguageContext);
 
+    useEffect(() => {
+        
+        if (selectedOption === 'English') {
+            setLanguage('en');
+        } else if (selectedOption === 'German') {
+            setLanguage('de');
+        }
+        else if (selectedOption === 'Italian') {
+            setLanguage('it');
+        }
+        console.log(language);
+        
+    }
+    , [selectedOption]);
     return (
         <View style={styles.container}>
             {options.map((option, index) => (
