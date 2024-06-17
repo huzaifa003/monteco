@@ -22,6 +22,7 @@ const LoginScreen = () => {
 
     return (
         <View style={styles.container}>
+            {/* ----------------- Background Image --------------- */}
             <View style={styles.backgroundContainer}>
                 <ImageBackground
                     source={require('../assets/Icons/CircleBackground.png')}
@@ -31,9 +32,13 @@ const LoginScreen = () => {
                     {/* Empty component to maintain layout */}
                 </ImageBackground>
             </View>
+
+            {/* ----------------- Logo Text Mozec  --------------- */}
             <View style={{ marginTop: 100, alignItems: 'center', justifyContent: 'center' }}>
                 <LogoComponent />
             </View>
+
+            {/* ----------------- Input Fields --------------- */}
             <Text style={styles.title}>{translations[language].login_to_your_account}</Text>
             <CountryCode placeholder={translations[language].enter_phone_number} />
             <SecureInputField
@@ -41,6 +46,8 @@ const LoginScreen = () => {
                 onChangeText={setPassword}
                 placeholder={translations[language].password}
             />
+
+            {/* ----------------- Remember Me --------------- */}
             <View style={{ marginLeft: 15 }}>
                 <CheckBox
                     label="Remember Me"
@@ -50,17 +57,24 @@ const LoginScreen = () => {
             </View>
             <Text />
             <Text />
+
+            {/* ----------------- Login Button --------------- */}
             <CustomButton
                 title={translations[language].login}
                 onPress={() => navigation.navigate("Home")}
                 color="#FFA500"
                 iconName="login"
             />
+
+            {/* ----------------- Forgot Password --------------- */}
             <Text style={styles.forgotPassword}>{translations[language].forgot_password}</Text>
+
+            {/* ----------------- Language Selector --------------- */}
             <View style={{ width: '100%', marginTop: '20%', alignItems: 'center', justifyContent: 'center' }}>
                 <SegmentedControl options={['English', 'German', 'Italian']} />
             </View>
-
+            
+            {/* ----------------- Footer Text --------------- */}
             <Text style={styles.footerText}>
                 {translations[language].dont_have_an_account} <Text onPress={()=>{navigation.navigate("Register")}} style={styles.signUpText}>{translations[language].register}</Text>
             </Text>

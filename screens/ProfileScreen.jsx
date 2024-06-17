@@ -20,25 +20,34 @@ const ProfileScreen = () => {
 
         <SafeAreaView style={styles.container}>
 
+            {/* -------------- Top right icon ------------------------ */}
             <TopRightIcon icon='pencil' onClick={() => setModalVisible(true)} size={26} color='black' />
-
+            
+            {/* -------------- Logo ------------------------ */}
             <View style={{ paddingHorizontal: 10, flex: 0.4, marginTop: 40 }}>
                 <Surface style={styles.surface}>
                     <Image source={require('../assets/Icons/logo.png')} style={{ width: '100%', height: '100%', borderRadius: 40 }} />
                 </Surface>
             </View>
 
+            {/* -------------- Text ------------------------ */}
+
             <Text style={styles.textStyle}>Name: {translations[language].name}</Text>
             <Text style={styles.textStyle}>Phone: {translations[language].phone}</Text>
             <Text style={styles.textStyle}>Region: {translations[language].region}</Text>
             <Text style={styles.textStyle}>Language: {language}</Text>
-
+            
+                {/* -------------- Button ------------------------ */}
             <Button
                 mode="contained"
                 style={{ marginTop: 20, width: '100%', backgroundColor: '#fc3503', borderRadius: 10, paddingVertical: 5 }}
                 onPress={() => navigation.navigate("Login")}>
                 {translations[language].logout}
             </Button>
+
+            {/* -------------- Modal ------------------------ */}
+
+
 
             <Modal style={{ height: '20%' }}
                 animationType='fade'
@@ -49,6 +58,8 @@ const ProfileScreen = () => {
                     setModalVisible(!modalVisible);
                 }}
             >
+
+                   {/* ------------------ Segmented Control Inside Button (Language Selector ) -------------------  */}
                 <View style={styles.modalView}>
                     <SegmentedControl options={['English', 'German', 'Italian']} />
                     <Text></Text>

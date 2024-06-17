@@ -41,6 +41,8 @@ const RegisterationScreen = () => {
 
     return (
         <View style={styles.container}>
+
+            {/* --------------- Image Background ------------------ */}
             <View style={styles.backgroundContainer}>
                 <ImageBackground
                     source={require('../assets/Icons/CircleBackground.png')}
@@ -50,9 +52,13 @@ const RegisterationScreen = () => {
                     {/* Empty component to maintain layout */}
                 </ImageBackground>
             </View>
+
+            {/* --------------- Logo Text Mozec ------------------ */}
             <View style={{ marginTop: 100, alignItems: 'center', justifyContent: 'center' }}>
                 <LogoComponent />
             </View>
+
+            {/* --------------- Input Fields ------------------ */}
             <Text style={styles.title}>{translations[language].register}</Text>
 
             {/* <Provider>
@@ -97,16 +103,19 @@ const RegisterationScreen = () => {
 
 
 
-
+                {/* Seperators */}
                 <Text />
                 <Text />
-                <Button onPress={()=>{navigation.navigate("Login")}}  mode='contained' style={{ borderRadius: 5, paddingVertical: 5 }}> {translations[language].register}  </Button>
+
+                {/* --------------- Register Button ------------------ */}
+
+                <Button onPress={() => { navigation.navigate("Login") }} mode='contained' style={{ borderRadius: 5, paddingVertical: 5 }}> {translations[language].register}  </Button>
 
 
 
-
+                {/* --------------- Footer Text ------------------ */}
                 <Text style={styles.footerText}>
-                    {translations[language].already_have_an_account} <Text onPress={()=> navigation.navigate("Login")} style={styles.signUpText}>{translations[language].login}</Text>
+                    {translations[language].already_have_an_account} <Text onPress={() => navigation.navigate("Login")} style={styles.signUpText}>{translations[language].login}</Text>
                 </Text>
             </PaperProvider>
 
