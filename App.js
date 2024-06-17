@@ -10,6 +10,7 @@ import ProfileScreen from './screens/ProfileScreen';
 import translations from './assets/Lang/Translation';
 
 import LanguageContext from './Context/LanguageContext';
+import HomeScreen from './screens/HomeScreen';
 
 SplashScreen.preventAutoHideAsync();  // Prevent the splash screen from hiding
 
@@ -82,7 +83,7 @@ export default function App() {
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>
       <View style={styles.container}>
-        <LoginScreen />
+        <HomeScreen />
       </View>
     </LanguageContext.Provider>
 
